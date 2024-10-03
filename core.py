@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return "Hello Render! I am UAGoose writing from backend"
+    return render_template("index.html")
 
 if __name__ == '__main__':
     # Get the PORT environment variable from Render (default to 5000 if not set)
