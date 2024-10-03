@@ -4,44 +4,83 @@
     border-radius: 20px;
     background-color: rgb(255, 0, 225);
     width: 780px;
-    height: 150px;
+    height: 140px;
     margin: 20px;
     border: 20px;
     border-color: black;
     position: relative;
-    left: 350px;
+    left: 550px;
     }
     
-    .headings {
+.headings {
+    position: relative;
+    left: 100px;
+    font-family: "Popins" sans-serif;
     text-align: center;
     background-color: rgb(171, 2, 171);
     height: 100px;
     }
     
-    #button1 {
-        border: none;
-    background-color: rgb(255, 0, 225);
+#button1 {
+    border: none;
+    background-color: white;
     left: 200px;
+    top: 100px;
     font-family: Bradley Hand, cursive;
     font-weight: bold;
     font-size: 20px;
     color: rgb(70, 0, 139);
     }
     
-    #search1 {
-        position: relative;
-    width: 300px; 
-    height: 50px; 
-    font-family: cursive; 
+#search1 {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 500px; 
+    height: 65px; 
+    font-family: "Popins"; 
     margin: 25px; 
     border: 20px;
-    border-radius: 16px;
-    border-color: black;
+    border-radius: 16px; 
+    text-align: center; 
+    color: black;
     }
     
-    input::placeholder {
+    #search1::placeholder {
       opacity: 0.5;
       font-size: 16px;
       color: black;
       text-align: center;
     }
+
+#dailyFont {
+    position: relative;
+    right: 85px;
+    bottom: 1px;
+    text-align: center;
+    font-family: "Brush Script MT", cursive;
+    font-size: 60px;
+}
+
+#buttonBG {
+    border-color: black;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#addGIF {
+    height: 23px;
+    width: 23px;
+    position: relative;
+    right: 80px;
+    bottom: 25px;
+}
+
+#searchDiv {
+    display: none;
+    position: relative;
+    background-color: white;
+    width: 780px;
+    height: 350px;
+    bottom: 60px;
+}
