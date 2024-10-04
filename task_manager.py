@@ -66,7 +66,14 @@ def mark_task_done(task_id):
 # Function to retrieve a task by id
 def get_task(task_id):
     c.execute('SELECT * FROM tasks WHERE id = %s', (task_id,))
-    return c.fetchone()
+    info = c.fetchone()
+    return {
+        "id" : info[0],
+        "header" : info[1],
+        "description" : info[2],
+        "photo_path" : info[3],
+        "status" : info[4]
+    }
 
 # Function to list all tasks
 def list_tasks():
@@ -74,13 +81,12 @@ def list_tasks():
     tasks = c.fetchall()
     tasklist = []
     for task in tasks:
-        done_status = 'Done' if task[4] else 'Not Done'
         tasklist.append({
             "id": task[0], 
             "header": task[1], 
             "description": task[2], 
             "photo_path": task[3], 
-            "status": done_status
+            "status": task[4]
         })
     return tasklist
 

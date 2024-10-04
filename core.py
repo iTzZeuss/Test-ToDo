@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import os 
 import config
 import task_manager as task_mgr
@@ -19,7 +19,16 @@ def return_tasklist():
     #fetching list from database
     task_list = task_mgr.list_tasks()
     #returning
-    return task_list
+    return jsonify(task_list)
+
+@app.route('/taskinfo/<int:id>', methods=['GET'])
+def return_task_info(id):
+    #FORFRONTEDL this enpoint will return single dictionary which contains information about specific task.
+    #Note: include id in request
+    #request example for task with id 2: alterapps.xyz/taskinfo/2
+
+    taskinfo = task_mgr.get_task(id)
+    return jsonify(taskinfo)
 
 if __name__ == '__main__':
     # Just running the app. nothing interesting in here. Mb we will need to setup ssl here
