@@ -14,7 +14,7 @@ def connect_db():
 conn = connect_db()
 c = conn.cursor()
 
-# Create tasks table if it doesn't exist
+# Create tasks table if it doesn't exis
 c.execute('''
     CREATE TABLE IF NOT EXISTS tasks (
         id SERIAL PRIMARY KEY,
