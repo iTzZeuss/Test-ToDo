@@ -1,7 +1,8 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 import os 
 import config
 import task_manager as task_mgr
+from uuid import uuid4
 
 app = Flask(__name__)
 
@@ -42,6 +43,34 @@ def delete_task(id):
     task_mgr.close_connection()
 
     return 200
+
+@app.route('/newtask_form')
+def return_form():
+    #FORFRONTEND returns taskcreation_form.html to user
+    return render_template("taskcreation_form.html")
+
+@app.route("/create_task", methods=["POST"])
+def create_task():
+    #FORFRONTEND gets information from form.
+    #IDs needed:
+    #header - text
+    #description - text
+    #photo - any photo type (png/jpg)
+    #Saves info to database and redirects back to main page
+    header = request.form.get("task_header")
+    description = request.form.get("task_description")
+    photo = request.files["task_photo"]
+
+    #saving photo with name uuid4 into /static/photos folder
+    filename = str(uuid4()) + photo.filename.split('.')[1]
+    filepath = os.path.join(config.PHOTOS_FOLDER_PATH, filename)
+    photo.save(filepath)
+
+    #saving info into database
+    task_mgr.add_task(header, description, filepath, False)
+
+    #redirecting
+    return redirect(url_for("main_page"))
 
 if __name__ == '__main__':
     # Just running the app. nothing interesting in here. Mb we will need to setup ssl here
