@@ -18,7 +18,9 @@ def return_tasklist():
     #example of dict: {"id":"0", "header":"Example Task", "description":"once upon a time", "photo_path":"somepath/img", "status":"completed"}
 
     #fetching list from database
+    task_mgr.connect_db()
     task_list = task_mgr.list_tasks()
+    task_mgr.close_connection()
     #returning
     return jsonify(task_list)
 
@@ -28,7 +30,9 @@ def return_task_info(id):
     #Note: include id in request
     #request example for task with id 2: alterapps.xyz/taskinfo/2
 
+    task_mgr.connect_db()
     taskinfo = task_mgr.get_task(id)
+    task_mgr.close_connection()
 
     return jsonify(taskinfo)
 
@@ -37,7 +41,10 @@ def delete_task(id):
     #FORFRONTEND this route will delete item specified by the url
     #Note: inclide id in request
     #request example for task with id 2: alterapps.xyz/delete_task/2
+
+    task_mgr.connect_db()
     task_mgr.delete_task(id)
+    task_mgr.close_connection()
 
     return 200
 
@@ -54,6 +61,7 @@ def create_task():
     #description - text
     #photo - any photo type (png/jpg)
     #Saves info to database and redirects back to main page
+
     header = request.form.get("task_header")
     description = request.form.get("task_description")
     photo = request.files["task_photo"]
@@ -64,7 +72,9 @@ def create_task():
     photo.save(filepath)
 
     #saving info into database
+    task_mgr.connect_db()
     task_mgr.add_task(header, description, filepath, False)
+    task_mgr.close_connection()
 
     #redirecting
     return redirect(url_for("main_page"))
