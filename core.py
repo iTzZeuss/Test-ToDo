@@ -20,7 +20,6 @@ def return_tasklist():
     #fetching list from database
     task_mgr.connect_db()
     task_list = task_mgr.list_tasks()
-    task_mgr.close_connection()
     #returning
     return jsonify(task_list)
 
@@ -32,7 +31,6 @@ def return_task_info(id):
 
     task_mgr.connect_db()
     taskinfo = task_mgr.get_task(id)
-    task_mgr.close_connection()
 
     return jsonify(taskinfo)
 
@@ -44,7 +42,6 @@ def delete_task(id):
 
     task_mgr.connect_db()
     task_mgr.delete_task(id)
-    task_mgr.close_connection()
 
     return 200
 
@@ -74,7 +71,6 @@ def create_task():
     #saving info into database
     task_mgr.connect_db()
     task_mgr.add_task(header, description, filepath, False)
-    task_mgr.close_connection()
 
     #redirecting
     return redirect(url_for("main_page"))
