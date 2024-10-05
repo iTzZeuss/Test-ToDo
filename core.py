@@ -19,7 +19,6 @@ def return_tasklist():
 
     #fetching list from database
     task_list = task_mgr.list_tasks()
-    task_mgr.close_connection()
     #returning
     return jsonify(task_list)
 
@@ -30,7 +29,6 @@ def return_task_info(id):
     #request example for task with id 2: alterapps.xyz/taskinfo/2
 
     taskinfo = task_mgr.get_task(id)
-    task_mgr.close_connection()
 
     return jsonify(taskinfo)
 
@@ -40,7 +38,6 @@ def delete_task(id):
     #Note: inclide id in request
     #request example for task with id 2: alterapps.xyz/delete_task/2
     task_mgr.delete_task(id)
-    task_mgr.close_connection()
 
     return 200
 
