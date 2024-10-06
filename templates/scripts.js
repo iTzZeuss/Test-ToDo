@@ -7,7 +7,7 @@ function addTask() {
 
 function handleInputChange(event) {
     const value = event.target.value;
-    console.log("Current input value:", value);   optional/debug
+    //console.log("Current input value:", value);   optional/debug
 }
 text1.addEventListener('input', handleInputChange);
 

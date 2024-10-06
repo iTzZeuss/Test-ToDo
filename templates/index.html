@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HTML, CSS and JavaScript demo</title>
+<title>Daily.io</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <div class="header">
 <p class="headFont">Daily.io</p>
 </div>
 <div class="mainText">
-    <h3 style="font-size: 20px">Your solution to a stressful routine</h2>
+    <h3 style="font-size: 26px; font-family: Voltaire">Your solution to a stressful routine</h2>
     <h1 id=dailyFont>Daily.io</h1>
 </div>
-<form method="post" enctype="multipart/form-data">
-    <input type="search" id="searchBar" oninput="findTask()">
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="search" placeholder="Search for a task" id="searchBar" oninput="findTask()"></input>
     <div id=searchDiv></div>
 </form>
 <div class="footer">
-    <p>Version 1.1 | 2024</p>
+    <p style="font-family: ConcertOne; font-size: 20px;">Version 1.1 | 2024</p>
 </div>
-
+<script src="scripts.js"></script>   
 </body>
 </html>
