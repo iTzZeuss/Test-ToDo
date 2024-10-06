@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Daily.io</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="header">
-<p class="headFont">Daily.io</p>
-</div>
-<div class="mainText">
-    <h3 style="font-size: 26px; font-family: Voltaire">Your solution to a stressful routine</h2>
-    <h1 id=dailyFont>Daily.io</h1>
-</div>
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="search" placeholder="Search for a task" id="searchBar" oninput="findTask()"></input>
-    <div id=searchDiv></div>
-</form>
-<div class="footer">
-    <p style="font-family: ConcertOne; font-size: 20px;">Version 1.1 | 2024</p>
-</div>
-<script src="scripts.js"></script>   
-</body>
+    <head>
+        <title>Daily.io</title>
+        <link rel="stylesheet" href="styles.css">
+        <!--some fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="header">
+            <p class="headFont">Daily.io</p>
+        </div>
+
+        <div class="mainText">
+            <h3 style="font-size: 24px; font-family: Voltairel; margin-top:80px">Your solution to a stressful routine</h2>
+            <h1 id=dailyFont>Daily.io</h1>
+        </div>
+
+        <form action="/search_task" method="post" enctype="multipart/form-data">
+            <input type="search" placeholder="Search for a task" id="searchBar" oninput="findTask()"/>
+            <div id=searchDiv></div>
+        </form>
+
+        <div class="footer">
+            <p class="footer_text">Version 1.1 | 2024</p>
+        </div>
+
+        <script src="scripts.js"></script>  
+    </body>
 </html>

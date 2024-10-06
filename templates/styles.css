@@ -14,53 +14,77 @@
 }
 
 body {
-    background-color: lightgray;
+    background-color: #D4D4D4;
     text-align: center;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    overflow-x: hidden;
 }
 
 .header {
-    border-bottom: 3px solid rgba(107,174,252,255);
-    text-align: center;
     position: relative;
-    right: 10px;
-    bottom: 34px;
-    width: 1922px;
+    border-bottom: 3px solid #69AEFF;
+    text-align: center;
+    width: 100%;
     height: 60px;
-    background-color: rgb(255, 255, 255);
+    background-color: #E9E9E9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1000; /* Ensures it stays on top of other content */
+    position: fixed;
+    top: 0;
 }
 
 .headFont {
-    right: 20px;
+    top: 0;
+    position: fixed;
     font-family: "Knewave";
     position: relative;
     font-size: 35px; 
-    }
+    margin: 0;
+}
 
 #dailyFont {
     font-family: "ConcertOne";
     position: relative;
-    font-size: 130px;
+    font-size: 105px;
     bottom: 75px;
 }
 
 #searchBar {
     position: relative;
     bottom: 90px;
-    border: 2px solid rgba(151,194,242,255);
+    border: 3px solid #69AEFF;
     border-radius: 10px;
-    width: 500px;
+    width: 830px;
     height: 45px;
+    background-color: #EDEDED;
+}
+
+#searchBar:focus {
+    outline: none;
+    border: 3px solid #4d9af3;
+    box-shadow: 0 0 5px #3694ff; /* Adds a glow effect */
 }
 
 .footer {
     border-top: 1px solid gray;
     text-align: center;
     position: relative;
-    right: 10px;
     top: 413px;
-    width: 1922px;
+    width: 100%;
     height: 45px;
-    background-color: rgb(224, 224, 224);
+    background-color: #E9E9E9;
+    display: flex;
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.10);
+}
+
+
+.footer_text {
+    font-family: 'Baloo Bhaijaan', sans-serif;
+    font-size: 28px;
+    color: #656565
 }
 
 #searchDiv {
