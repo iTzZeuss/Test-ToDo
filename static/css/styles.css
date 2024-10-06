@@ -27,7 +27,7 @@ body {
     bottom: 45px;
 }
 
-.searchBar {
+#searchBar {
     position: relative;
     bottom: 70px;
     border: 2px solid rgba(151,194,242,255);
@@ -45,4 +45,16 @@ body {
     width: 1000px;
     height: 50px;
     background-color: rgb(224, 224, 224);
+}
+
+#searchDiv {
+    display: none;
+    position: relative;
+    background-color: white;
+    height: 100px;
+    width: 417px;
+    left: 254px;
+    bottom: 74px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
