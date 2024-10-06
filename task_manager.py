@@ -3,12 +3,7 @@ import config  # This should contain your PostgreSQL connection settings (DB_HOS
 
 # Connect to the PostgreSQL database
 def connect_db():
-    conn = psycopg2.connect(
-        host=config.DB_HOST,
-        database=config.DB_NAME,
-        user=config.DB_USER,
-        password=config.DB_PASSWORD
-    )
+    conn = psycopg2.connect(config.DB_HOST)
     return conn
 
 conn = connect_db()
@@ -93,3 +88,5 @@ def list_tasks():
 # Close the connection (You can do this when done with all operations)
 def close_connection():
     conn.close()
+
+connect_db()
