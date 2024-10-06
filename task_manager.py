@@ -58,6 +58,9 @@ def delete_task(task_id):
 def mark_task_done(task_id):
     update_task(task_id, state=True)
 
+def mark_task_notdone(task_id):
+    update_task(task_id, state=False)
+
 # Function to retrieve a task by id
 def get_task(task_id):
     c.execute('SELECT * FROM tasks WHERE id = %s', (task_id,))
