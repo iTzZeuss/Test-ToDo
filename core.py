@@ -54,9 +54,9 @@ def return_form():
 def create_task():
     #FORFRONTEND gets information from form.
     #IDs needed:
-    #header - text
-    #description - text
-    #photo - any photo type (png/jpg)
+    #task_header - text
+    #task_description - text
+    #task_photo - any photo type (png/jpg)
     #Saves info to database and redirects back to main page
 
     header = request.form.get("task_header")
