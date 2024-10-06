@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html len="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/css/styles.css"/>
-    </head>
-
-    <body style="background-color: rgb(171, 2, 171);">
-        <div class="headings">
-            <h2 id="dailyFont">Daily.io</h2>
-        </div>
-        
-        <div class="myDiv1">
-            <input type="search" placeholder="Search for a task" id="search1" oninput="findTask()"/>
-
-            <div id="buttonBG">
-                <button type="button" id="button1" onclick="addTask()">Add new task</button>
-            </div>
-
-            <div class="big"></div>
-            <img src="static/add.gif" id="addGIF">
-        </div>    
-
-        <div id="searchDiv">
-
-        </div>
-        <script src="static/js/scripts.js"></script>   
-    </body>
+<html>
+<head>
+<title>HTML, CSS and JavaScript demo</title>
+</head>
+<body>
+<div class="header">
+<p class="headFont">Daily.io</p>
+</div>
+<div class="mainText">
+    <h3 style="font-size: 20px">Your solution to a stressful routine</h2>
+    <h1 id=dailyFont>Daily.io</h1>
+</div>
+<form method="post" enctype="multipart/form-data">
+    <input type="search" class="searchBar">
+</form>
+<div class="footer">
+    <p>Version 1.1 | 2024</p>
+</div>
+<script src="scripts.js"
+</body>
 </html>
