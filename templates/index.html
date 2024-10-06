@@ -4,6 +4,7 @@
 <title>HTML, CSS and JavaScript demo</title>
 </head>
 <body>
+
 <div class="header">
 <p class="headFont">Daily.io</p>
 </div>
@@ -12,11 +13,12 @@
     <h1 id=dailyFont>Daily.io</h1>
 </div>
 <form method="post" enctype="multipart/form-data">
-    <input type="search" class="searchBar">
+    <input type="search" id="searchBar" oninput="findTask()">
+    <div id=searchDiv></div>
 </form>
 <div class="footer">
     <p>Version 1.1 | 2024</p>
 </div>
-<script src="scripts.js"
+
 </body>
 </html>
