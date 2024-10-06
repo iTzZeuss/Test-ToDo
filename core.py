@@ -75,6 +75,22 @@ def create_task():
     #redirecting
     return redirect(url_for("main_page"))
 
+@app.route("/done/<int:id>", methods=["POST"])
+def mark_as_done(id):
+    #FORFRONTEND: this route changes specified task status to True
+    task_mgr.connect_db()
+    task_mgr.mark_task_done(id)
+
+    return 200
+
+@app.route("/notdone/<int:id>", methods=["POST"])
+def mark_as_done(id):
+    #FORFRONTEND: this route changes specified task status to False
+    task_mgr.connect_db()
+    task_mgr.mark_task_notdone(id)
+
+    return 200
+
 if __name__ == '__main__':
     # Just running the app. nothing interesting in here. Mb we will need to setup ssl here
     port = int(os.environ.get('PORT', config.DEFAULT_PORT))
