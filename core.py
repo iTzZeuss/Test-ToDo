@@ -84,7 +84,7 @@ def mark_as_done(id):
     return 200
 
 @app.route("/notdone/<int:id>", methods=["POST"])
-def mark_as_done(id):
+def mark_as_notdone(id):
     #FORFRONTEND: this route changes specified task status to False
     task_mgr.connect_db()
     task_mgr.mark_task_notdone(id)
