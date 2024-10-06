@@ -25,7 +25,7 @@ def return_tasklist():
 
 @app.route('/taskinfo/<int:id>', methods=['GET'])
 def return_task_info(id):
-    #FORFRONTEDL this route will return single dictionary which contains information about specific task.
+    #FORFRONTEND: this route will return single dictionary which contains information about specific task.
     #Note: include id in request
     #request example for task with id 2: alterapps.xyz/taskinfo/2
 
@@ -36,7 +36,7 @@ def return_task_info(id):
 
 @app.route('/delete_task/<int:id>', methods=['DELETE'])
 def delete_task(id):
-    #FORFRONTEND this route will delete item specified by the url
+    #FORFRONTEND: this route will delete item specified by the url
     #Note: inclide id in request
     #request example for task with id 2: alterapps.xyz/delete_task/2
 
@@ -47,12 +47,12 @@ def delete_task(id):
 
 @app.route('/newtask_form')
 def return_form():
-    #FORFRONTEND returns taskcreation_form.html to user
+    #FORFRONTEND: returns taskcreation_form.html to user
     return render_template("taskcreation_form.html")
 
 @app.route("/create_task", methods=["POST"])
 def create_task():
-    #FORFRONTEND gets information from form.
+    #FORFRONTEND: gets information from form.
     #IDs needed:
     #task_header - text
     #task_description - text
