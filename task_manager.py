@@ -3,7 +3,7 @@ import config  # This should contain your PostgreSQL connection settings (DB_HOS
 
 # Connect to the PostgreSQL database
 def connect_db():
-    conn = psycopg2.connect(config.DB_HOST)
+    conn = psycopg2.connect("postgresql://task_database_owner:7DozN5UjTPnh@ep-dark-field-a2x8dnvu.eu-central-1.aws.neon.tech/task_database?sslmode=require")
     return conn
 
 conn = connect_db()
