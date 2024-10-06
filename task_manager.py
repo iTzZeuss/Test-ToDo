@@ -1,18 +1,13 @@
 import psycopg2
 import config  # This should contain your PostgreSQL connection settings (DB_HOST, DB_NAME, DB_USER, DB_PASSWORD)
 
-PGHOST = 'ep-dark-field-a2x8dnvu.eu-central-1.aws.neon.tech'
-PGDATABASE = 'task_database'
-PGUSER = 'task_database_owner'
-PGPASSWORD = '7DozN5UjTPnh'
-
 # Connect to the PostgreSQL database
 def connect_db():
     conn = psycopg2.connect(
-        host=PGHOST,
-        database=PGDATABASE,
-        user=PGUSER,
-        password=PGPASSWORD,
+        host=config.DB_HOST,
+        database=config.DB_NAME,
+        user=config.DB_USER,
+        password=config.DB_PASSWORD,
         sslmode='require'  # Enforce SSL for connection
     )
     return conn
