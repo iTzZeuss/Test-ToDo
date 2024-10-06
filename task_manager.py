@@ -102,6 +102,3 @@ def list_tasks():
 # Close the connection (You can do this when done with all operations)
 def close_connection():
     conn.close()
-
-connect_db()
-add_task("try", "try", "try")
