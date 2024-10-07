@@ -2,8 +2,9 @@
 <html>
     <head>
         <title>Daily.io</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="taskCreation.css">
         <!--some fonts-->
+        <link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico"> <!--LOGO-->
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     </head>
@@ -14,13 +15,17 @@
         </div>
 
         <div class="mainText">
-            <h3 style="font-size: 24px; font-family: Voltairel; margin-top:80px">Your solution to a stressful routine</h2>
+            <h3 style="font-size: 24px; font-family: Voltaire; margin-top:80px">Your solution to a stressful routine</h2>
             <h1 id=dailyFont>Daily.io</h1>
         </div>
 
+        <a class="btn" href="taskCreation.html">
+        <button class="btn" id="createTask1"><b>+ New task</b></button>
+        </a>
+
         <form action="/search_task" method="post" enctype="multipart/form-data">
             <input type="search" placeholder="Search for a task" id="searchBar" oninput="findTask()"/>
-            <!--FUCK YOU search div! I was centering you for an hour! without any progress-->
+
             <div id=searchDiv></div>
         </form>
 
@@ -28,6 +33,6 @@
             <p class="footer_text">Version 1.1 | 2024</p>
         </div>
 
-        <script src="scripts.js"></script>  
+        <script src="taskCreation.js"></script>  
     </body>
 </html>
