@@ -1,5 +1,6 @@
 let searchDiv = document.getElementById("searchDiv");
 const text1 = document.getElementById("searchBar");
+const searchBTN = document.getElementById("searchBtn");
 
 function addTask() {
     

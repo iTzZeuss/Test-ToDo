@@ -1,21 +1,26 @@
 @font-face {
     font-family: "ConcertOne";
-    src: url(../../fonts/ConcertOne-Regular.ttf);
+    src: url(../fonts/ConcertOne-Regular.ttf);
 }
 
 @font-face {
     font-family: "Knewave";
-    src: url(../../fonts/Knewave-Regular.ttf);
+    src: url(../fonts/Knewave-Regular.ttf);
 }
 
 @font-face {
     font-family: "Voltaire";
-    src: url(../../fonts/Voltaire-Regular.ttf);
+    src: url(../fonts/Voltaire-Regular.ttf);
 }
 
 @font-face {
     font-family: "Teko";
-    src: url(../../fonts/Teko-VariableFont_wght.ttf);
+    src: url(../fonts/Teko-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Baloo";
+    src: url(../fonts/BalooBhaijaan2-VariableFont_wght.ttf);
 }
 
 body {
@@ -32,7 +37,7 @@ body {
     text-align: center;
     width: 100%;
     height: 60px;
-    background-color: #E9E9E9;
+    background-color: rgba(234, 234, 234, 1);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     z-index: 1000; /* Ensures it stays on top of other content */
     position: fixed;
@@ -56,28 +61,58 @@ body {
 }
 
 #searchBar {
-    padding: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
     position: relative;
     bottom: 130px;
     border: 3px solid #69AEFF;
-    border-radius: 10px;
-    width: 830px;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    width: 600px;
     height: 45px;
     background-color: #EDEDED;
+    outline: none;
 }
 
-::placeholder {
+input[type="search"]::-ms-clear { /* Removes the automatically added clear button */
+  display: none;
+}
+
+  ::placeholder {
     position: fixed;
     bottom: 9px;
-    right: 705px;
     font-family: "Voltaire";
-    font-size: 17px;
+    font-size: 18px;
 }
+    button[type="button"] {
+    right: 7px;
+    position: relative;
+    height: 45px;
+    width: 150px;
+    bottom: 130px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #69AEFF;
+    border: 3px solid #69AEFF;
+    border-radius: 0 25px 25px 0;
+    }
 
 #searchBar:focus {
     outline: none;
     border: 3px solid #4d9af3;
+    box-shadow: 0 0 5px #3694ff;
+}
+
+#searchBar:focus + #searchBTN {
+    outline: none;
+    border: 3px solid #4d9af3;
     box-shadow: 0 0 5px #3694ff; /* Adds a glow effect */
+}
+
+.searchBTN-button {
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .footer {
@@ -87,7 +122,7 @@ body {
     top: 550px;
     width: 100%;
     height: 45px;
-    background-color: #E9E9E9;
+    background-color: rgba(233, 233, 233, 1);
     display: flex;
     justify-content: center; /* Horizontally center the text */
     align-items: center; /* Vertically center the text */
@@ -103,29 +138,35 @@ body {
 
 #searchDiv {
     display: none;
-    position: relative;
+    position: fixed;
     background-color: white;
-    height: 240px;
-    width: 820px;
-    left: 540px;
-    bottom: 129px;
+    height: 255px;
+    width: 595px;
+    left: 44.8%;
+    transform: translate(-50%, -50%);
     border: 2px solid lightsteelblue;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
 }
-
 #createTask1 {
+    display: block;
     border: 2px solid lightgray;
     border-radius: 18px;
     background-color: #4d9af3;
     color: white;
-    font-family: 'Voltaire';
     position: relative;
-    left: 850px;
+    left: 1350px;
     bottom: 290px;
-    font-size: 20px;
-    height: 45px;
+    font-size: 24px;
+    height: 37px;
     width: 160px;
 }
+
+.btn {
+  text-decoration: none; /* remove the underline */
+  font-family: "Baloo";
+  display: block;
+}
+
