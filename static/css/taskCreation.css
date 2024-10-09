@@ -18,6 +18,19 @@
     src: url(../fonts/Teko-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: "Baloo";
+    src: url(../fonts/BalooBhaijaan2-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: #D4D4D4;
+    text-align: center;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    overflow-x: hidden;
+}
+
 .header {
     position: relative;
     border-bottom: 3px solid #69AEFF;

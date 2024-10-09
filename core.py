@@ -48,7 +48,7 @@ def delete_task(id):
 @app.route('/newtask_form')
 def return_form():
     #FORFRONTEND: returns taskcreation_form.html to user
-    return render_template("taskcreation_form.html")
+    return render_template("taskCreation.html")
 
 @app.route("/create_task", methods=["POST"])
 def create_task():
