@@ -10,4 +10,5 @@
   - `task_photo` type - image file
 - `/done/<int:id>` - api endpoint that changes specified task's status to True (or in other words marks it as done)
 - `/notdone/<int:id>` - api endpoint that changes specified task's status to False (or in other words marks it as not done)
+- `/search_task` - api endpoint that gets parametr `query` and based on it finds similar tasks in the database. Returns dictionary with task informations
 ### Note: Default status of the task is False (or not done)
