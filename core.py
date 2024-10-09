@@ -93,10 +93,20 @@ def mark_as_notdone(id):
 
 @app.route("/search_task")
 def search_for_task():
-    #check query (it is necessary)
-    #ask task_mgr for info
-    #return
-    return
+    #FORFRONTEND: returns dictionary with information about tasks that have similar words to search query parametr in task parametrs like header and description
+    #Parametrs:
+    #   string:query
+    #Note: it is neccesary parametr
+
+    query = request.args.get('query')  # example: /search?query=flask
+
+    if not query:
+        return jsonify({"error": "Missing 'query' parameter"}), 400  # Return 400 Bad Request
+
+    # Continue processing if 'query' is present
+    task_mgr.connect_db()
+    search_results = task_mgr.search_tasks(query)
+    return jsonify(search_results)
 
 if __name__ == '__main__':
     # Just running the app. nothing interesting in here. Mb we will need to setup ssl here

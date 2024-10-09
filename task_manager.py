@@ -28,6 +28,33 @@ c.execute('''
 
 conn.commit()
 
+# Function to search tasks based on user query
+def search_tasks(query):
+    # Use ILIKE for case-insensitive search in both header and description fields
+    search_query = f"%{query}%"  # Surround query with wildcards for partial matching
+    c.execute('''
+        SELECT * FROM tasks
+        WHERE header ILIKE %s OR description ILIKE %s
+    ''', (search_query, search_query))
+
+    # Fetch all matching tasks
+    tasks = c.fetchall()
+    
+    # If there are matching tasks, format them into a list of dictionaries
+    if tasks:
+        tasklist = []
+        for task in tasks:
+            tasklist.append({
+                "id": task[0],
+                "header": task[1],
+                "description": task[2],
+                "photo_path": task[3],
+                "status": task[4]
+            })
+        return tasklist
+    else:
+        return []  # Return an empty list if no matches found
+
 # Function to add a new task
 def add_task(header, description, photopath, state=False):
     c.execute('''
