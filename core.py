@@ -91,6 +91,13 @@ def mark_as_notdone(id):
 
     return 200
 
+@app.route("/search_task")
+def search_for_task():
+    #check query (it is necessary)
+    #ask task_mgr for info
+    #return
+    return
+
 if __name__ == '__main__':
     # Just running the app. nothing interesting in here. Mb we will need to setup ssl here
     port = int(os.environ.get('PORT', config.DEFAULT_PORT))
