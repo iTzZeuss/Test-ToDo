@@ -1,9 +1,12 @@
 let searchDiv = document.getElementById("searchDiv");
 const text1 = document.getElementById("searchBar");
 const searchBTN = document.getElementById("searchBtn");
+const numOfDivs = 5;
 
-function addTask() {
-    
+for (i = 1; i <= numOfDivs; i++) {
+    let newDiv = document.createElement("div")
+    newDiv.textContent = "" //will do these 2 tmrw
+    newDiv.className = ""
 }
 
 function handleInputChange(event) {

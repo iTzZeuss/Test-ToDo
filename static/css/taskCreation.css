@@ -73,3 +73,42 @@ body {
     font-size: 28px;
     color: #656565
 }
+
+.solid {
+    border-top: 3px solid #B1B1B1;
+}
+
+#backBTN {
+    display: block;
+    border: 2px solid lightgray;
+    border-radius: 18px;
+    background-color: #4d9af3;
+    color: white;
+    position: relative;
+    font-size: 24px;
+    height: 37px;
+    width: 160px;
+    text-decoration: none; /* remove the underline */
+    font-family: "Baloo";
+}
+
+#submitBTN {
+    display: block;
+    border: 2px solid lightgray;
+    border-radius: 18px;
+    background-color: #4d9af3;
+    color: white;
+    position: relative;
+    font-size: 24px;
+    height: 37px;
+    width: 160px;
+}
+
+.submit {
+    text-decoration: none; /* remove the underline */
+    font-family: "Baloo";
+}
+
+.results {
+    display: none;
+}
