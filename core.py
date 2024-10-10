@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for
 import os 
 import config
 import task_manager as task_mgr
-from uuid import uuid4
+import image_manager
 
 app = Flask(__name__)
 
@@ -65,28 +65,29 @@ def return_view():
 
 @app.route("/create_task", methods=["POST"])
 def create_task():
-    #FORFRONTEND: gets information from form.
-    #IDs needed:
-    #task_header - text
-    #task_description - text
-    #task_photo - any photo type (png/jpg)
-    #Saves info to database and redirects back to main page
+    # FORFRONTEND: gets information from form.
+    # IDs needed:
+    # task_header - text
+    # task_description - text
+    # task_photo - any photo type (png/jpg)
 
     header = request.form.get("task_header")
     description = request.form.get("task_description")
     photo = request.files["task_photo"]
 
-    #saving photo with name uuid4 into /static/photos folder
-    #filename = str(uuid4()) + "." + photo.filename.split('.')[1] XXX: in future
-    filepath = os.path.join(config.PHOTOS_FOLDER_PATH, photo.filename)
-    photo.save(filepath)
+    # Uploading the photo to Cloudinary
+    uploaded_url, public_id = image_manager.upload_to_cloudinary(photo)
 
-    #saving info into database
-    task_mgr.connect_db()
-    task_mgr.add_task(header, description, filepath, False)
+    if uploaded_url:
+        # Saving info into the database with the URL and public_id
+        task_mgr.connect_db()
+        task_mgr.add_task(header, description, public_id, False)
 
-    #redirecting
-    return redirect(url_for("main_page"))
+        # Redirecting
+        return redirect(url_for("main_page"))
+    else:
+        # Handle the error case (e.g., return an error message)
+        return "Error uploading photo", 400
 
 @app.route("/done/<int:id>", methods=["POST"])
 def mark_as_done(id):
