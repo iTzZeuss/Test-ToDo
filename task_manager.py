@@ -1,5 +1,5 @@
 import psycopg2
-import config  # This should contain your PostgreSQL connection settings (DB_HOST, DB_NAME, DB_USER, DB_PASSWORD)
+import config  
 
 # Connect to the PostgreSQL database
 def connect_db():
