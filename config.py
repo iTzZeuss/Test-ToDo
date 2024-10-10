@@ -11,4 +11,4 @@ DB_USER = environmental_var("db_usr")
 DB_PASSWORD = environmental_var("db_pwd")
 
 # Paths configuration
-PHOTOS_FOLDER_PATH = "task_photos/"
+PHOTOS_FOLDER_PATH = "/task_photos/"

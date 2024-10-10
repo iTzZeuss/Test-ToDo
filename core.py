@@ -77,8 +77,8 @@ def create_task():
     photo = request.files["task_photo"]
 
     #saving photo with name uuid4 into /static/photos folder
-    filename = str(uuid4()) + "." + photo.filename.split('.')[1]
-    filepath = os.path.join(config.PHOTOS_FOLDER_PATH, filename)
+    #filename = str(uuid4()) + "." + photo.filename.split('.')[1] XXX: in future
+    filepath = os.path.join(config.PHOTOS_FOLDER_PATH, photo.filename)
     photo.save(filepath)
 
     #saving info into database
