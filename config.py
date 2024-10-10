@@ -1,6 +1,6 @@
 from os import getenv as environmental_var
 
-# Run config
+# Application-run config
 DEBUG = True
 DEFAULT_PORT = 4000
 
