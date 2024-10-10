@@ -12,8 +12,8 @@ DB_PASSWORD = "7DozN5UjTPnh" #environmental_var("db_pwd")
 
 #IMAGE Cloud configuration
 CLOUD_NAME = "dfoevvd0s"
-CLOUD_API_KEY = "755354744751921"
-CLOUD_SECRET = "FyQANkrHXWULDH2ZBZJSFtenJV4"
+CLOUD_API_KEY = "755354744751921" #environmental_var("cloud_api_key")
+CLOUD_SECRET = "FyQANkrHXWULDH2ZBZJSFtenJV4" #environmental_var("cloud_secret")
 
 # Paths configuration
 PHOTOS_FOLDER_PATH = "/task_photos/"
