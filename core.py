@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for
 import os 
 import config
 import task_manager as task_mgr
-import image_manager
+import image_manager as image_mgr
 
 app = Flask(__name__)
 
@@ -76,7 +76,7 @@ def create_task():
     photo = request.files["task_photo"]
 
     # Uploading the photo to Cloudinary
-    uploaded_url, public_id = image_manager.upload_to_cloudinary(photo)
+    uploaded_url, public_id = image_mgr.upload_to_cloudinary(photo)
 
     if uploaded_url:
         # Saving info into the database with the URL and public_id
