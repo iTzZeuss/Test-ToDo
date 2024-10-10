@@ -6,6 +6,9 @@ from uuid import uuid4
 
 app = Flask(__name__)
 
+#TODO: when mobile designs implemented return necessary designs to specified devices. use user agent headers for that.
+#Also create edit form endpoints for editing tasks
+
 @app.route('/')
 def main_page():
     #FORFRONTEND: returning index for user
@@ -46,9 +49,19 @@ def delete_task(id):
     return 200
 
 @app.route('/newtask_form')
-def return_form():
-    #FORFRONTEND: returns taskcreation_form.html to user
+def return_createform():
+    #FORFRONTEND: returns taskCreation.html to user
     return render_template("taskCreation.html")
+
+@app.route('/edittask_form')
+def return_editform():
+    #FORFRONTEND: returns taskEdit.html to user
+    return render_template("taskEdit.html")
+
+@app.route('/view_task')
+def return_view():
+    #FORFRONTEND: returns taskView.htmll to user
+    return render_template("taskView.html")
 
 @app.route("/create_task", methods=["POST"])
 def create_task():

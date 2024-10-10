@@ -11,4 +11,6 @@
 - `/done/<int:id>` - api endpoint that changes specified task's status to True (or in other words marks it as done)
 - `/notdone/<int:id>` - api endpoint that changes specified task's status to False (or in other words marks it as not done)
 - `/search_task` - api endpoint that gets parametr `query` and based on it finds similar tasks in the database. Returns dictionary with task informations
+- `/edittask_form` - returns visual `taskEdit.html` to user
+- `/view_task` - returns visual `taskView.html` to user
 ### Note: Default status of the task is False (or not done)
