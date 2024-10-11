@@ -25,17 +25,16 @@
 
     <form action="/create_task" method="post" enctype="multipart/form-data">
         <label for="task_header">Title</label> <br>
-        <input type="text" name="task_header" placeholder="Write your task's title" id="task_header"> <br>
+        <input type="text" name="task_header" placeholder="Write your task's title" id="task_header" required> <br>
 
         <label for="task_description">Description</label> <br>
-        <textarea name="task_description" placeholder="The taks's description" id="task_description"></textarea> <br>
+        <textarea name="task_description" placeholder="The taks's description" id="task_description" required></textarea> <br>
 
         <input name="task_photo" type="file" accept="image/*" id="task_photo" value="Add photo cover">
 
         <a href="/" id="backBTN" class="btn"><b>Back</b></a>
-        <button type="submit" value="Submit" class="submitBTN" id="submitBTN" onclick="getDiv()"><b>Submit</b></button>
+        <input type="submit" class="submitBTN" id="submitBTN"><b>Submit</b>
     </form>
-
         <div class="footer">
             <p class="footer_text">Version 1.1 | 2024</p>
         </div>
