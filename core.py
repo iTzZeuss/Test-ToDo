@@ -44,6 +44,12 @@ def delete_task(id):
     #request example for task with id 2: alterapps.xyz/delete_task/2
 
     task_mgr.connect_db()
+
+    task_info = task_mgr.get_task(id)
+    #delete the photo
+    image_mgr.delete_from_cloudinary(task_info["photo_path"])
+
+    #delete other stuff
     task_mgr.delete_task(id)
 
     return 200
@@ -121,6 +127,16 @@ def search_for_task():
     task_mgr.connect_db()
     search_results = task_mgr.search_tasks(query)
     return jsonify(search_results)
+
+@app.route("/get_img_url/<int:id>")
+def image_url_by_id(id):
+    #FORFRONTEND: returns url to the task's image. specify id in the url
+
+    task_mgr.connect_db()
+    task_image_id = task_mgr.get_task(id)["photo_path"]
+
+    return config.CLOUD_RESOURCE_URL_TEMPLATE + task_image_id
+
 
 if __name__ == '__main__':
     # Just running the app. nothing interesting in here. Mb we will need to setup ssl here
