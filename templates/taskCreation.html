@@ -19,21 +19,21 @@
         </div>
 
     <div id="belowDiv">
-        <h1 style="font-family: Baloo; margin-top:70px;"><b>Create New Task</b></h1>
+        <h1 style="font-family: Baloo; margin-top:70px; font-size: 40px"><b>Create New Task</b></h1>
         <hr class="solid">
     </div>
 
     <form action="/create_task" method="post" enctype="multipart/form-data">
-        <label for="task_header">Title</label> <br>
+        <label for="task_header" id="labelTitle"><b>Title</b></label> <br>
         <input type="text" name="task_header" placeholder="Write your task's title" id="task_header" required> <br>
 
-        <label for="task_description">Description</label> <br>
-        <textarea name="task_description" placeholder="The taks's description" id="task_description" required></textarea> <br>
+        <label for="task_description" id="labelDesc"><b>Description</b></label> <br>
+        <textarea name="task_description" placeholder="Write your taks's description" id="task_description" required></textarea> <br>
 
         <input name="task_photo" type="file" accept="image/*" id="task_photo" value="Add photo cover">
 
         <a href="/" id="backBTN" class="btn"><b>Back</b></a>
-        <input type="submit" class="submitBTN" id="submitBTN"><b>Submit</b>
+        <button type="submit" class="submitBTN" id="submitBTN" class="btn"><b>Submit</b></button>
     </form>
         <div class="footer">
             <p class="footer_text">Version 1.1 | 2024</p>

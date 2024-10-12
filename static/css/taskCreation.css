@@ -76,6 +76,9 @@ body {
 
 .solid {
     border-top: 3px solid #B1B1B1;
+    width: 100%;
+    position: relative;
+    bottom: 33px;
 }
 
 #backBTN {
@@ -126,4 +129,89 @@ body {
     height: 40px;
     width: 250px;
     margin-top: 10px;
+}
+
+#labelTitle {
+    font-family: "baloo";
+    font-size: 35px;
+    position: relative;
+    bottom: 30px;
+}
+
+#task_header {
+    position: relative;
+    font-family: "baloo";
+    font-size: 20px;
+    border: 3px solid #69AEFF;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    height: 30px;
+    width: 300px;
+    bottom: 35px;
+}
+#task_header:focus {
+    outline: none;
+    border: 3px solid #4d9af3;
+    box-shadow: 0 0 5px #3694ff;
+}
+
+#task_header::placeholder {
+    position: relative;
+    left: 3px;
+    top: 1px;
+}
+
+#labelDesc {
+    font-family: "baloo";
+    font-size: 35px;
+    position: relative;
+    bottom: 30px;
+}
+
+#task_description {
+    position: relative;
+    font-family: "baloo";
+    font-size: 20px;
+    border: 3px solid #69AEFF;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    height: 150px;
+    width: 300px;
+    bottom: 36px;
+}
+
+#task_description:focus {
+    outline: none;
+    border: 3px solid #4d9af3;
+    box-shadow: 0 0 5px #3694ff;
+}
+
+#task_description::placeholder {
+    position: relative;
+    top: 1px;
+}
+
+#submitBTN {
+    height: 41px;
+    font-weight: bold;
+    position: relative;
+    left: 790px;
+    bottom: 30px;
+}
+
+#backBTN {
+    font-weight: bold;
+    position: relative;
+    left: 960px;
+    top: 10px;
+}
+
+#backBTN:hover {
+    background-color: #69AEFF;
+}
+
+#submitBTN:hover {
+    background-color: #69AEFF;
 }
