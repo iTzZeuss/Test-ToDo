@@ -13,4 +13,5 @@
 - `/search_task` - api endpoint that gets parametr `query` and based on it finds similar tasks in the database. Returns dictionary with task informations
 - `/edittask_form` - returns visual `taskEdit.html` to user
 - `/view_task` - returns visual `taskView.html` to user
+- `/get_img_url/<int:id>` - api enpoint return url to image for task with specified in url id
 ### Note: Default status of the task is False (or not done)
