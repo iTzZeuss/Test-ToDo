@@ -3,12 +3,6 @@ const text1 = document.getElementById("searchBar");
 const searchBTN = document.getElementById("searchBtn");
 const numOfDivs = 5;
 
-for (i = 1; i <= numOfDivs; i++) {
-    let newDiv = document.createElement("div")
-    newDiv.textContent = "" //will do these 2 tmrw
-    newDiv.className = ""
-}
-
 function handleInputChange(event) {
     const value = event.target.value;
     //console.log("Current input value:", value);   optional/debug
@@ -24,11 +18,17 @@ function findTask() {
     }
 }
 
-const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function() {
-  const myObj = JSON.parse(this.responseText);
-  document.getElementById("demo").innerHTML = myObj.name;
-}
-
-xmlhttp.open("GET", "task");
-xmlhttp.send();
+fetch('/tasklist', {
+  method: 'GET', 
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    let head = document.getElementById("head");
+    head.innerHTML = data[0].header
+    let desc = document.getElementById("desc");
+    desc.innerHTML = data[0].description
+  })

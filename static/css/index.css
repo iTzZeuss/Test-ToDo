@@ -178,3 +178,18 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
     left: 31%;
     top: 35%;
 }
+
+#head {
+    font-family: "baloo";
+    font-size: 25px;
+    position: relative;
+    bottom: 20px;
+    left: 30px;
+}
+
+#desc {
+    font-family: "baloo";
+    font-size: 20px;
+    position: relative;
+    bottom: 35px;
+}
