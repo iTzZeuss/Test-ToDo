@@ -142,7 +142,7 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
     background-color: white;
     height: 255px;
     width: 595px;
-    left: 46%;
+    left: 45%;
     transform: translate(-50%, -50%);
     border: 2px solid lightsteelblue;
     border-bottom-left-radius: 25px;
@@ -158,7 +158,7 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
     background-color: #4d9af3;
     color: white;
     position: relative;
-    left: 1700px;
+    left: 1340px;
     bottom: 290px;
     font-size: 24px;
     height: 37px;
@@ -181,7 +181,7 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
     width: 570px;
     height: 80px;
     background-color: rgb(255, 255, 255);
-    left: 31%;
+    left: 27%;
     bottom: 390px;
 }
 

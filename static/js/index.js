@@ -8,11 +8,11 @@ const searchResults2 = document.getElementById("searchResults2");
 
 function handleInputChange(event) {
     const value = event.target.value;
-    //console.log("Current input value:", value);   optional/debug
+    //console.log("Current input value:", value);   seeing what user types
 }
 text1.addEventListener('input', handleInputChange);
 
-function findTask() {
+function findTask() {                           //display or hide search results
     if (text1.value === "") {
         searchDiv.style.display = "none";
         searchResults1.style.display = "none";
@@ -25,31 +25,30 @@ function findTask() {
     }
 }
 
-fetch('/tasklist', {
+fetch('/tasklist', {          //fetch data from server
   method: 'GET', 
   headers: {
     'Content-Type': 'application/json',
   },
 })
   .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    let head = document.getElementById("head1");
-    head.innerHTML = data[0].header
-    let desc = document.getElementById("desc1");
-    desc.innerHTML = data[0].description
-  })
+  .then(data => {                                   //print the data on search
+    if (data && data.length > 0) {
+      console.log(data);
+      let head = document.getElementById("head1");    
+      head.innerHTML = data[0].header
+      let desc = document.getElementById("desc1");
+      desc.innerHTML = data[0].description
+      let head1 = document.getElementById("head2");
+      head1.innerHTML = data[1].header
+      let desc1 = document.getElementById("desc2");
+      desc1.innerHTML = data[1].description
 
-  fetch('/tasklist', {
-    method: 'GET', 
-    headers: {
-      'Content-Type': 'application/json',
-    },
+      // ...
+    } else {
+      console.error('No data returned from server'); // Handle error
+    }
   })
-    .then(response => response.json())
-    .then(data => {
-      let head = document.getElementById("head2");
-      head.innerHTML = data[1].header
-      let desc = document.getElementById("desc2");
-      desc.innerHTML = data[1].description
+  .catch(error => {
+    console.error('Error:', error);  // Handle error
     })
