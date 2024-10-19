@@ -2,6 +2,7 @@ const searchDiv = document.getElementById("searchDiv");
 const text1 = document.getElementById("searchBar");
 const searchBTN = document.getElementById("searchBtn");
 const numOfDivs = 5;
+//temp
 const searchResults1 = document.getElementById("searchResults1");
 const searchResults2 = document.getElementById("searchResults2");
 
@@ -43,7 +44,8 @@ fetch('/tasklist', {          //fetch data from server
       head1.innerHTML = data[1].header
       let desc1 = document.getElementById("desc2");
       desc1.innerHTML = data[1].description
-
+      //TODO: for loop throught each dictionary element and generate container for each. if data length less = 0, print text "no tasks were made"
+      //or smth similar
       // ...
     } else {
       console.error('No data returned from server'); // Handle error

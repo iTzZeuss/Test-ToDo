@@ -1,4 +1,5 @@
-Flask==3.0.3
-psycopg2==2.9.9
-uuid==1.30
-cloudinary==1.41.0
+Flask==3.0.3        #Core of our backend
+psycopg2==2.9.9     #For database communication
+uuid==1.30          #For some unique strings
+cloudinary==1.41.0  #For cloud communication
+Werkzeug==3.0.4     #Temp. hashing functions

@@ -1,10 +1,14 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 import os 
 import config
-import task_manager as task_mgr
+from database_connector import Connection
+from task_manager import TaskManager
 import image_manager as image_mgr
 
 app = Flask(__name__)
+#establishing connection with database
+connector = Connection()
+task_mgr = TaskManager(connector)
 
 #TODO: when mobile designs implemented return necessary designs to specified devices. use user agent headers for that.
 #Also create edit form endpoints for editing tasks
@@ -21,7 +25,6 @@ def return_tasklist():
     #example of dict: {"id":"0", "header":"Example Task", "description":"once upon a time", "photo_path":"somepath/img", "status":"completed"}
 
     #fetching list from database
-    task_mgr.connect_db()
     task_list = task_mgr.list_tasks()
     #returning
     return jsonify(task_list)
@@ -32,7 +35,6 @@ def return_task_info(id):
     #Note: include id in request
     #request example for task with id 2: alterapps.xyz/taskinfo/2
 
-    task_mgr.connect_db()
     taskinfo = task_mgr.get_task(id)
 
     return jsonify(taskinfo)
@@ -42,8 +44,6 @@ def delete_task(id):
     #FORFRONTEND: this route will delete item specified by the url
     #Note: inclide id in request
     #request example for task with id 2: alterapps.xyz/delete_task/2
-
-    task_mgr.connect_db()
 
     task_info = task_mgr.get_task(id)
     #delete the photo
@@ -86,7 +86,7 @@ def create_task():
 
     if uploaded_url:
         # Saving info into the database with the URL and public_id
-        task_mgr.connect_db()
+
         task_mgr.add_task(header, description, public_id, False)
 
         # Redirecting
@@ -98,43 +98,34 @@ def create_task():
 @app.route("/done/<int:id>", methods=["POST"])
 def mark_as_done(id):
     #FORFRONTEND: this route changes specified task status to True
-    task_mgr.connect_db()
     task_mgr.mark_task_done(id)
-
     return 200
 
 @app.route("/notdone/<int:id>", methods=["POST"])
 def mark_as_notdone(id):
     #FORFRONTEND: this route changes specified task status to False
-    task_mgr.connect_db()
     task_mgr.mark_task_notdone(id)
-
     return 200
 
 @app.route("/search_task")
 def search_for_task():
-    #FORFRONTEND: returns dictionary with information about tasks that have similar words to search query parametr in task parametrs like header and description
+    #FORFRONTEND: returns dictionary with information about tasks that have similar words to search query parameter in task parametrs like header and description
     #Parametrs:
     #   string:query
-    #Note: it is neccesary parametr
-
+    #Note: it is neccesary parameter
     query = request.args.get('query')  # example: /search?query=flask
 
     if not query:
         return jsonify({"error": "Missing 'query' parameter"}), 400  # Return 400 Bad Request
 
     # Continue processing if 'query' is present
-    task_mgr.connect_db()
     search_results = task_mgr.search_tasks(query)
     return jsonify(search_results)
 
 @app.route("/get_img_url/<int:id>")
 def image_url_by_id(id):
     #FORFRONTEND: returns url to the task's image. specify id in the url
-
-    task_mgr.connect_db()
     task_image_id = task_mgr.get_task(id)["photo_path"]
-
     return config.CLOUD_RESOURCE_URL_TEMPLATE + task_image_id
 
 
