@@ -3,12 +3,14 @@ import os
 import config
 from database_connector import Connection
 from task_manager import TaskManager
+from account_manager import AccountManager
 import image_manager as image_mgr
 
 app = Flask(__name__)
 #establishing connection with database
 connector = Connection()
 task_mgr = TaskManager(connector)
+account_mgr = AccountManager(connector)
 
 #TODO: when mobile designs implemented return necessary designs to specified devices. use user agent headers for that.
 #Also create edit form endpoints for editing tasks
