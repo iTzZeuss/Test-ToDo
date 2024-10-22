@@ -65,4 +65,3 @@ def check_password_requirements(password:str):
     result = analyze_password_strength(password, common_passwords)
     return result
 
-check_password_requirements()
