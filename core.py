@@ -68,7 +68,7 @@ def return_editform():
 
 @app.route('/view_task')
 def return_view():
-    #FORFRONTEND: returns taskView.htmll to user
+    #FORFRONTEND: returns taskView.html to user
     return render_template("taskView.html")
 
 @app.route("/create_task", methods=["POST"])

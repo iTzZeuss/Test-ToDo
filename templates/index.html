@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Daily.io</title>
+        <link rel="stylesheet" href="static/css/needs.css">
         <link rel="stylesheet" href="static/css/index.css">
         <!--some fonts-->
         <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"> <!--LOGO-->
@@ -34,14 +35,14 @@
         </form>
 
         <form method="get" action="/search_task">
-            <div class="searchResults" id="searchResults1">
+            <a href="/view_task" id="searchA1"><div class="searchResults" id="searchResults1">
                 <h2 class="head" id="head1"></h2>
                 <h2 class="desc" id="desc1"></h2>
-            </div> <br>
-            <div class="searchResults" id="searchResults2">
+            </div> </a> <br>
+            <a href="/view_task" id="searchA2"><div class="searchResults" id="searchResults2">
                 <h2 class="head" id="head2"></h2>
                 <h2 class="desc" id="desc2"></h2>
-            </div>
+            </div> </a>
         </form>
 
         <div class="footer">

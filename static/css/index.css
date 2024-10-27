@@ -1,58 +1,3 @@
-@font-face {
-    font-family: "ConcertOne";
-    src: url(../fonts/ConcertOne-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Knewave";
-    src: url(../fonts/Knewave-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Voltaire";
-    src: url(../fonts/Voltaire-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Teko";
-    src: url(../fonts/Teko-VariableFont_wght.ttf);
-}
-
-@font-face {
-    font-family: "Baloo";
-    src: url(../fonts/BalooBhaijaan2-VariableFont_wght.ttf);
-}
-
-body {
-    background-color: #D4D4D4;
-    text-align: center;
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-    overflow-x: hidden;
-}
-
-.header {
-    position: relative;
-    border-bottom: 3px solid #69AEFF;
-    text-align: center;
-    width: 100%;
-    height: 60px;
-    background-color: rgba(234, 234, 234, 1);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    z-index: 1000; /* Ensures it stays on top of other content */
-    position: fixed;
-    top: 0;
-}
-
-.headFont {
-    top: 0;
-    position: fixed;
-    font-family: "Knewave";
-    position: relative;
-    font-size: 35px; 
-    margin: 0;
-}
-
 #dailyFont {
     font-family: "ConcertOne";
     position: relative;
@@ -115,34 +60,13 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.footer {
-    border-top: 1px solid gray;
-    text-align: center;
-    position: relative;
-    top: 550px;
-    width: 100%;
-    height: 45px;
-    background-color: rgba(233, 233, 233, 1);
-    display: flex;
-    justify-content: center; /* Horizontally center the text */
-    align-items: center; /* Vertically center the text */
-    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.10);
-}
-
-
-.footer_text {
-    font-family: 'Baloo Bhaijaan', sans-serif;
-    font-size: 28px;
-    color: #656565
-}
-
 #searchDiv {
     display: none;
     position: relative;
     background-color: white;
     height: 255px;
     width: 595px;
-    left: 45%;
+    left: 46%;
     transform: translate(-50%, -50%);
     border: 2px solid lightsteelblue;
     border-bottom-left-radius: 25px;
@@ -181,7 +105,7 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
     width: 570px;
     height: 80px;
     background-color: rgb(255, 255, 255);
-    left: 27%;
+    left: 30.5%;
     bottom: 390px;
 }
 
@@ -190,11 +114,26 @@ input[type="search"]::-ms-clear { /* Removes the automatically added clear butto
     font-size: 25px;
     position: relative;
     left: 30px;
+    text-decoration: none;
+    color: black;
 }
+
 
 .desc {
     font-family: "baloo";
     font-size: 20px;
     position: relative;
     bottom: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+#searchA1 {
+    text-decoration: none;
+    color: black;
+}
+
+#searchA2 {
+    text-decoration: none;
+    color: black;
 }

@@ -5,6 +5,12 @@ const numOfDivs = 5;
 //temp
 const searchResults1 = document.getElementById("searchResults1");
 const searchResults2 = document.getElementById("searchResults2");
+const head1 = document.getElementById("head1");
+const head2 = document.getElementById("head2");
+const desc1 = document.getElementById("desc1");
+const desc2 = document.getElementById("desc2");
+const searchA1 = document.getElementById("searchA1");
+const searchA2 = document.getElementById("searchA2");
 
 
 function handleInputChange(event) {
@@ -18,11 +24,19 @@ function findTask() {                           //display or hide search results
         searchDiv.style.display = "none";
         searchResults1.style.display = "none";
         searchResults2.style.display = "none";
+        head1.style.display = "none";
+        head2.style.display = "none";
+        desc1.style.display = "none";
+        desc2.style.display = "none";
     }
     else{    
     searchDiv.style.display = "block";
     searchResults1.style.display = "block";
     searchResults2.style.display = "block";
+    head1.style.display = "block";
+    head2.style.display = "block";
+    desc1.style.display = "block";  
+    desc2.style.display = "block";
     }
 }
 
@@ -44,13 +58,22 @@ fetch('/tasklist', {          //fetch data from server
       head1.innerHTML = data[1].header
       let desc1 = document.getElementById("desc2");
       desc1.innerHTML = data[1].description
-      //TODO: for loop throught each dictionary element and generate container for each. if data length less = 0, print text "no tasks were made"
-      //or smth similar
-      // ...
-    } else {
-      console.error('No data returned from server'); // Handle error
+      for (let i = 0; i < data.length; i++) {
+        let div = document.createElement("div");
+        div.className = "searchResults";
+        searchDiv.appendChild(div);
+      }
     }
-  })
+    else if (data && data.length === 0) {
+      let taskWarning = document.createElement("h1");
+      taskWarning.className = "taskWarning";
+      taskWarning.innerHTML = "Create a task first!";
+      searchDiv.appendChild(div);
+      searchA1.style.display = "none";
+      searchA2.style.display = "none";
+    }
+    }
+  )
   .catch(error => {
     console.error('Error:', error);  // Handle error
     })
